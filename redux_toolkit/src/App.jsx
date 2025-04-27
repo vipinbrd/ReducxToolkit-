@@ -3,6 +3,7 @@ import './App.css'
 import { NavBar } from './components/Navbar'
 import { Cart } from './components/Cart'
 import { useSelector } from 'react-redux'
+import { Product } from './components/Product'
 
 function App() {
   const showCart=useSelector((state)=>state.ui.isCartShow)
@@ -13,6 +14,7 @@ function App() {
   <NavBar/>
   {showCart&&
   <Cart/>}
+  <Product/>
     </>
   )
 }
