@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux"
 import { CartAction } from "../store/CartSlice";
+import { UIAction } from "../store/UISlice";
 
 export function Cart() {
   const data = useSelector((state) => state.cart);
@@ -12,6 +13,11 @@ export function Cart() {
     else{
         dispatch(CartAction.removeFromCart(ele))
     }
+   
+    dispatch(UIAction.setNotification("Cart Update SuccessFully"))
+    setTimeout(()=>{
+        dispatch(UIAction.setNotification(false))
+    },2000)
 
 
   }
