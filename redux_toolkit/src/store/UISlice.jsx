@@ -14,4 +14,12 @@ reducers:{
 
 
 })
+
+export function setUIMessage(message){
+ return (dispatch)=>{
+    dispatch(UI.actions.setNotification(message))
+
+ }
+
+}
 export const UIAction=UI.actions;
